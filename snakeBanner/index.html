@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var lastTimestamp = 0;
+        var frame = 0, x = 0;
+        var ctx, snake;
+        function init() {
+            ctx = document.getElementById("main").getContext("2d");
+            snake = document.getElementById("snake");
+            window.requestAnimationFrame(animate);
+        }
+        function animate(timestamp) {
+            if (timestamp - lastTimestamp > 50) {
+                lastTimestamp = timestamp;
+                frame = (frame+1)%10;
+                x = (x+3)%800;
+                ctx.clearRect(0,0,800,800);
+                ctx.drawImage(snake, frame*79, 0, 79, 79, x, 0, 79, 79);
+            }
+            window.requestAnimationFrame(animate);
+        }
+    </script>
+    <style>
+        #snake {visibility:hidden;position:absolute;}
+        #main {background: #000022;}
+    </style>
+</head>
+<body onLoad=init()>
+<img id=snake src=https://www.spriters-resource.com/resources/sheets/54/57053.png>
+<canvas id=main width=800 height=100></canvas>
+</body>
+</html>

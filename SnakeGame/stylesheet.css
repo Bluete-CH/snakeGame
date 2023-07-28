@@ -1,0 +1,19 @@
+body {
+    background-color: #000033;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    background-color: #051094;
+    border-style: groove;
+    border-color: aliceblue;
+    width: 500px;
+    height: 500px;
+}
+
+img {
+    visibility: hidden;
+    position: absolute;
+}
